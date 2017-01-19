@@ -1,0 +1,6 @@
+name: mruby-gr-wavmp3p
+description: WavMp3p library for mruby-arduino environment
+author: Jun Takeda
+website: https://github.com/takjn/mruby-gr-wavmp3p
+protocol: git
+repository: https://github.com/takjn/mruby-gr-wavmp3p.git
