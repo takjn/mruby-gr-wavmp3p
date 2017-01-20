@@ -1,7 +1,9 @@
+Work in progress.（まだ動くことが確認できていません。）
+
 # mruby-gr-wavmp3p
 WavMp3p library for mruby-arduino environment.
 This library is a wrapper library for Gadget Renesas WavMp3p library.
-Currently, only supports GR-CITRUS.
+Currently, only supports GR-CITRUS with WA-MIKAN.
 
 ## install by mrbgems
 - add conf.gem line to `build_config.rb`
