@@ -16,7 +16,7 @@
 #include <utilities.h>
 #include <MsTimer2.h>
 #include <WavMp3p.h>
-#include <sd.h>
+#include <SD.h>
 
 #define LED_ON		HIGH
 #define LED_OFF		LOW
@@ -63,7 +63,6 @@ mrb_wavmp3p_init(mrb_state *mrb, mrb_value self)
   mrb_get_args(mrb, "ii", &pin_pause, &pin_skip);
 
 	pinMode(PIN_LED0, OUTPUT);
-	digitalWrite(PIN_LED0, LED_ON);
 
 	if (!SD.begin()) {
     return mrb_bool_value(false);
@@ -99,7 +98,9 @@ mrb_wavmp3p_play(mrb_state *mrb, mrb_value self)
 	MsTimer2::set(100, cyclic_handler);
 	MsTimer2::start();
 
+	digitalWrite(PIN_LED0, LED_ON);
 	char *res = wavmp3p->play(fpath);
+	digitalWrite(PIN_LED0, LED_OFF);
 
 	// stop timer
 	MsTimer2::stop();
